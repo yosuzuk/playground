@@ -13,7 +13,7 @@ const config = {
     output: {
         path: __dirname + '/webroot/dist',
         filename: 'js/modules/views/[name]/index.js?[hash]',
-        publicPath: 'dist/js'
+        publicPath: 'dist'
     },
     module: {
         loaders: [{
