@@ -10,46 +10,63 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 
 ## Conditions
 
-- Working with existing folder structure
-- Working with existing modules written in AMD
-- Working with existing require statements for static assets (e.g. templates)
-- Working with existing asynchronous require statements (require([...], f))
-- Working with path alias
-- Working with bower dependencies
+- A: Working with existing folder structure
+- B: Working with existing modules written in AMD
+- C: Working with existing require statements for static assets (e.g. templates)
+- D: Working with existing asynchronous require statements (require([...], f))
+- E: Working with path alias
+- F: Working with bower dependencies
 
-## Steps
+## Current result
 
-Init project
+- A: OK
+- B: Works for most modules (RequireJS specific loaders, such as "domReady", needs to be replaced)
+- C: The "text" loader can be replaced with Webpack's "raw-loader"
+- D: ES6's "system.import" is not supported by Webpack 1 (it kind of works with "require.ensure" but is limited to a static context)
+- E: OK
+- F: TODO
+
+## Steps to reproduce this setup
+
+- Init project
 
     npm init
 
-Install Webpack
+- Install Webpack
 
     npm install webpack --save-dev
 
-(missing webpack in PATH, TODO solve, Workaround via script entry in package.json)
+- Add a script entry for Webpack in package.json
 
-Create `webpack.config.js`
+    "scripts": {
+      "webpack": "./node_modules/.bin/webpack --progress --colors"
+    }
 
-Install Babel and its loader and polyfill
+(allows us to run `npm run webpack`)
+
+- Create `webpack.config.js`
+
+(see the actual file for its content)
+
+- Install Babel and its loader and polyfill
 
     npm install --save-dev babel-core babel-preset-es2015 babel-loader babel-polyfill
 
-Create `.babelrc`
+- Create `.babelrc`
 
     { "presets": [ "es2015" ] }
 
-Move as many 3rd party libraries as possible from bower.json to package.json
+- Move as many 3rd party libraries as possible from bower.json to package.json
 
-    npm install --save jquery
+    npm install --save jquery someLib1 someLib2 someLibN
 
-Tell jshint to allow ES6
+- Tell jshint to allow ES6
 
     { "esversion": 6 }
 
-( '"esnext": true' is deprecated )
+(use `"esnext": true` for older versions of jshint, or try to update)
 
-Install raw-loader and configure an alias 'text' pointing to the raw loader
+- Install raw-loader and configure an alias 'text' pointing to the raw loader
 
     npm install --save-dev raw-loader
 

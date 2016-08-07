@@ -1,3 +1,6 @@
+# Build directory
+webroot/dist
+
 # Logs
 logs
 *.log
