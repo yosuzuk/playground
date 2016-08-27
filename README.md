@@ -19,12 +19,14 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to SystemJS ES201
 
 ## Current result
 
-- A: TODO
-- B: TODO
-- C: TODO
+- A: OK
+- B: Works for most modules (RequireJS specific loaders, such as "domReady", needs to be replaced)
+- C: The "text" loader can be replaced with systemjs's "text-plugin" but the path syntax changes*
 - D: TODO
-- E: TODO
+- E: OK
 - F: TODO
+
+(* e.g. 'myTemplate.html!text' instead of 'text!myTemplate.html')
 
 ## Steps to reproduce this setup
 
@@ -73,6 +75,10 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to SystemJS ES201
 
 (use `"esnext": true` for older versions of jshint, or try to update)
 
+- Install text-plugin
+
+    npm run jspm install text
+
 - Configure path alias
 
 (see webroot/config.js paths)
@@ -82,7 +88,6 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to SystemJS ES201
 Install jspm-git
 
     npm install jspm-git --save-dev
-
 
 Create a new registry
 

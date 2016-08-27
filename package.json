@@ -5,7 +5,7 @@
   "main": false,
   "dependencies": {},
   "devDependencies": {
-    "jspm": "^0.16.45"
+    "jspm": "~0.16.45"
   },
   "scripts": {
     "jspm": "jspm"
@@ -21,8 +21,10 @@
       "baseURL": "webroot"
     },
     "dependencies": {
-      "babel-polyfill": "npm:babel-polyfill@^6.13.0",
-      "jquery": "npm:jquery@~3.1.0"
+      "babel-polyfill": "npm:babel-polyfill@~6.13.0",
+      "jquery": "npm:jquery@~3.1.0",
+      "systemjs-plugin-text": "npm:systemjs-plugin-text@^0.0.8",
+      "text": "github:systemjs/plugin-text@^0.0.8"
     },
     "devDependencies": {
       "babel": "npm:babel-core@~5.8.24",

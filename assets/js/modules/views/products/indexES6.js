@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import $ from 'jquery';
 import * as productSource from 'products/productSourceAMD'; // written in AMD!
-import staticHtml from 'html!products/templates/static.html';
+import staticHtml from 'products/templates/static.html!text';
 
 $('<div></div>').html(staticHtml).appendTo('body');
 

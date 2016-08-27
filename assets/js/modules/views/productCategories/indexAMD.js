@@ -3,7 +3,8 @@ define(function(require) {
 
     var $ = require('jquery');
     var productCategorySource = require('productCategories/productCategorySourceES6');
-    var staticHtml = require('text!productCategories/templates/static.html');
+    //var staticHtml = require('text!productCategories/templates/static.html'); // syntax not supported
+    var staticHtml = require('productCategories/templates/static.html!text');
     //require('domReady!');
 
     $('<div></div>').html(staticHtml).appendTo('body');
