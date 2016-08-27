@@ -1,0 +1,32 @@
+{
+  "name": "systemjs-sample",
+  "version": "1.0.0",
+  "description": "Proof of concept for migrating from RequireJS AMD bower to systemjs ES2015 JSPM",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jspm": "^0.16.45"
+  },
+  "scripts": {
+    "jspm": "jspm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosuzuk/playground.git"
+  },
+  "author": "Yosuke Suzuki",
+  "license": "MIT",
+  "jspm": {
+    "directories": {
+      "baseURL": "webroot"
+    },
+    "dependencies": {
+      "jquery": "npm:jquery@~3.1.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@~5.8.24",
+      "babel-runtime": "npm:babel-runtime@~5.8.24",
+      "core-js": "npm:core-js@~1.1.4"
+    }
+  }
+}
