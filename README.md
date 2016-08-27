@@ -50,6 +50,17 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to SystemJS ES201
 
 (let JSPM prefix its properties, set "webroot" as public base path, choose Babel as transpiler)
 
+- Update .gitignore
+
+    webroot/dist
+    webroot/jspm_packages
+
+- Install babel-polyfill
+
+    npm run jspm install babel-polyfill
+
+(as this is not installed by default)
+
 - Move as many 3rd party libraries as possible from bower.json to package.json
 
     npm run jspm install jquery

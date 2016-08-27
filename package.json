@@ -2,7 +2,7 @@
   "name": "systemjs-sample",
   "version": "1.0.0",
   "description": "Proof of concept for migrating from RequireJS AMD bower to systemjs ES2015 JSPM",
-  "main": "index.js",
+  "main": false,
   "dependencies": {},
   "devDependencies": {
     "jspm": "^0.16.45"
@@ -21,6 +21,7 @@
       "baseURL": "webroot"
     },
     "dependencies": {
+      "babel-polyfill": "npm:babel-polyfill@^6.13.0",
       "jquery": "npm:jquery@~3.1.0"
     },
     "devDependencies": {
