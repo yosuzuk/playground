@@ -16,6 +16,7 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 - D: Working with existing asynchronous require statements (require([...], f))
 - E: Working with path alias
 - F: Working with bower dependencies
+- G: Working with external modules without manual configuration to resolve paths and nested dependencies
 
 ## Current result
 
@@ -25,6 +26,7 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 - D: ES6's "system.import" is not supported by Webpack 1 (it kind of works with "require.ensure" but is limited to a static context)
 - E: OK
 - F: TODO
+- G: OK (the "import" for a module in "sample-dependency-amd" works without configuration)
 
 ## Steps to reproduce this setup
 

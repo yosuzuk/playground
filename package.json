@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "babel-polyfill": "~6.9.1",
-    "jquery": "~3.1.0"
+    "jquery": "~3.1.0",
+    "sample-dependency-amd": "git://github.com/yosuzuk/sampleDependencyAmd.git#v1.0.0"
   },
   "scripts": {
     "webpack": "./node_modules/.bin/webpack --progress --colors"
