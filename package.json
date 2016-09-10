@@ -4,20 +4,22 @@
   "description": "Proof of concept for migrating from RequireJS to Webpack",
   "main": "index.js",
   "dependencies": {
-    "babel-polyfill": "~6.9.1",
-    "jquery": "~3.1.0",
+    "babel-polyfill": "6.9.1",
+    "jquery": "3.1.0",
     "sample-dependency-amd": "git://github.com/yosuzuk/sampleDependencyAmd.git#v1.0.0"
   },
   "scripts": {
-    "webpack": "./node_modules/.bin/webpack --progress --colors"
+    "webpack": "webpack --progress --colors",
+    "start": "http-server ./webroot -a localhost -o"
   },
   "devDependencies": {
-    "babel-core": "~6.11.4",
-    "babel-loader": "~6.2.4",
-    "babel-preset-es2015": "~6.9.0",
-    "html-loader": "~0.4.3",
-    "raw-loader": "~0.5.1",
-    "webpack": "~1.13.1"
+    "babel-core": "6.11.4",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.9.0",
+    "html-loader": "0.4.3",
+    "http-server": "0.9.0",
+    "raw-loader": "0.5.1",
+    "webpack": "1.13.1"
   },
   "author": "Yosuke Suzuki",
   "license": "MIT"

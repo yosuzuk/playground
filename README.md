@@ -15,8 +15,7 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 - C: Working with existing require statements for static assets (e.g. templates)
 - D: Working with existing asynchronous require statements (require([...], f))
 - E: Working with path alias
-- F: Working with bower dependencies
-- G: Working with external modules without manual configuration to resolve paths and nested dependencies
+- F: Working with external modules without manual configuration to resolve paths and nested dependencies
 
 ## Current result
 
@@ -25,8 +24,18 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 - C: The "text" loader can be replaced with Webpack's "raw-loader"
 - D: ES6's "system.import" is not supported by Webpack 1 (it kind of works with "require.ensure" but is limited to a static context)
 - E: OK
-- F: TODO
-- G: OK (the "import" for a module in "sample-dependency-amd" works without configuration)
+- F: OK (the "import" for a module in "sample-dependency-amd" works without configuration)
+
+## Commands
+
+Build:
+
+    npm install
+    npm run webpack
+
+Run website:
+
+    npm start
 
 ## Steps to reproduce this setup
 
@@ -41,7 +50,7 @@ Proof of concept: Gradually migrating from RequireJS AMD bower to Webpack ES6 np
 - Add a script entry for Webpack in package.json
 
     "scripts": {
-      "webpack": "./node_modules/.bin/webpack --progress --colors"
+      "webpack": "webpack --progress --colors"
     }
 
 (allows us to run `npm run webpack`)
